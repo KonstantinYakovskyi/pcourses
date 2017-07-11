@@ -5,7 +5,7 @@ def xfind():
     # s2 = 'cd'
     result = False
     s2_len = len(s2)
-    for i in range(len(s1) - len(s2)):
+    for i in range(len(s1) - len(s2) +1):
         fragment = s1[i:i + s2_len]
         if fragment == s2:
             result = True
@@ -15,3 +15,5 @@ def xfind():
 
 if __name__ == "__main__":
     exit(xfind())
+
+    # doesn't work with abcd cd
