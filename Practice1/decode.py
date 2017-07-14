@@ -41,3 +41,19 @@ def decode():
 
 if __name__ == "__main__":
     exit(decode())
+
+
+"""
+        def func_2(row, previous_symbol = '', result =''):
+            first_symbol = row[:1]
+            result_last_symbol = result[-1:]
+
+            if first_symbol == previous_symbol and first_symbol != '#':
+                if result_last_symbol != first_symbol:
+                    result += first_symbol
+            elif first_symbol == previous_symbol and first_symbol == '#':
+                if result[-2:-1] != result[-1:]:
+                    result += result[-1:]
+            row[:1] = ''
+            return func_2(row, first_symbol, result)
+"""
