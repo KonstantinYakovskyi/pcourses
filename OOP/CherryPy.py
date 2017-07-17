@@ -1,3 +1,8 @@
+"""
+http://docs.cherrypy.org/en/latest/tutorials.html
+https://github.com/koder-ua/python-classes/blob/master/slides/pdf/FF_tasks_simple.pdf
+"""
+
 import cherrypy
 
 
