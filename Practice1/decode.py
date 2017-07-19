@@ -34,6 +34,8 @@ def decode():
     expected_results = ['', '', '1', '1', '1', '11', '1225']
     actual_results = func(rows)
 
+    assert func(rows) == expected_results
+
     print(actual_results == expected_results)
     print('Expected results: ' + str(expected_results))
     print('Actual results: ' + str(actual_results))
@@ -41,19 +43,3 @@ def decode():
 
 if __name__ == "__main__":
     exit(decode())
-
-
-"""
-        def func_2(row, previous_symbol = '', result =''):
-            first_symbol = row[:1]
-            result_last_symbol = result[-1:]
-
-            if first_symbol == previous_symbol and first_symbol != '#':
-                if result_last_symbol != first_symbol:
-                    result += first_symbol
-            elif first_symbol == previous_symbol and first_symbol == '#':
-                if result[-2:-1] != result[-1:]:
-                    result += result[-1:]
-            row[:1] = ''
-            return func_2(row, first_symbol, result)
-"""
