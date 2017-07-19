@@ -7,7 +7,7 @@ def get_files(root):
     items = listdir(root)
     for item in items:
         if isfile(join(root, item)):
-            result.append(item)
+            result.append(item + ', ')
         elif isdir(root):
             result += get_files(join(root, item))
     return result
