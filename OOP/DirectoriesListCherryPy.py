@@ -1,5 +1,3 @@
-import fnmatch
-
 import cherrypy
 from os import listdir
 from os.path import isfile, join
