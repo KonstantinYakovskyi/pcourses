@@ -7,7 +7,7 @@ def xjoin():
 
     for i in array:
         s += '-' + str(i)
-    print s
+    print(s)
 
 
 if __name__ == "__main__":
