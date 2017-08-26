@@ -1,4 +1,4 @@
-from Practice1.helper import find_index
+from helper import find_index
 
 
 def xfind():
@@ -7,7 +7,7 @@ def xfind():
 
     index = find_index(s1, s2)
     if index is not None:
-        print("TRUE:  S1 is in S2")
+        print("TRUE:  S1 is in S2", "Index:" + index)
     else:
         print("FALSE: S1 is not in S2")
 
