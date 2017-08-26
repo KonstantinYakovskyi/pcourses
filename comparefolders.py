@@ -1,10 +1,7 @@
 import os
 
-LIST1 = ["a", "b"]
-LIST2 = ["b", "c", "d"]
-
-PATH1 = 'materials\\FirstDir'
-PATH2 = 'materials\\SecondDir'
+PATH1 = 'materials\\FOLDER1'
+PATH2 = 'materials\\FOLDER2'
 
 
 def compare_lists(list1, list2):
@@ -44,16 +41,31 @@ def compare_folders(folder1, folder2):
     return compare_lists(files1, files2)
 
 
-assert compare_lists(["a", "b"], ["b", "c", "d"]) == (['b'], ['a'], ['c', 'd']), 'Lists test FAILED'
-assert compare_folders(PATH1, PATH2) == (['DocToRead3.txt', 'DocToRead4.txt'], ['DocToRead1.txt', 'DocToRead2.txt'],
-                                         ['DocToRead5.txt']), 'Folders items test FAILED'
+def test_compare_lists():
+    assert compare_lists(['a', 'b'], ['b', 'c', 'd']) == (['b'], ['a'], ['c', 'd'])
+    assert compare_lists(['1', '2', '3'], ['a', 'c', '3', '5']) == (['3'], ['1', '2'], ['a', 'c', '5'])
+    assert compare_lists(['1', '2', '3'], []) == ([], ['1', '2', '3'], []), 'Lists test FAILED'
+    assert compare_lists([], []) == ([], [], []), 'Lists test FAILED'
+
+
+def test_compare_folders():
+    assert compare_folders(PATH1, PATH2) == (['a.txt', 'b.txt'], ['c.txt'],
+                                             ['d.txt']), 'Folders items test FAILED'
 
 
 def run_folders_check(path1, path2):
     common_files, only_in_first_dir, only_in_second_dir = compare_folders(path1, path2)
-    print('Common files are: {},\nOnly in folder 1: {},\nOnly in folder 2: {}'.format(common_files, only_in_first_dir,
-                                                                                      only_in_second_dir))
+    print('BOTH: {},\nFIRST: {},\nSECOND: {}'.format(common_files, only_in_first_dir,
+                                                     only_in_second_dir))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     exit(run_folders_check(PATH1, PATH2))
+
+
+# def run_compare_list(list1, list2):
+#     res = compare_lists(list1, list2)
+#     print(res)
+
+# if __name__ == '__main__':
+#     exit(run_compare_list(LIST1, LIST2))
