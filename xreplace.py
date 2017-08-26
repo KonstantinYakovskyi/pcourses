@@ -1,3 +1,5 @@
+from Tools.scripts.treesync import raw_input
+
 from helper import find_index
 
 def xreplace():
